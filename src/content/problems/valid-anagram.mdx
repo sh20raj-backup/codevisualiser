@@ -1,0 +1,21 @@
+# Valid Anagram
+
+An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+## Intuition
+
+To determine if two strings are anagrams, they must contain the same characters with the same frequencies. We can use a hash map (or a fixed-size frequency array) to keep track of character counts. Each increment for string `S` must be balanced by a decrement for string `T`.
+
+import { ValidAnagramViz } from '../../components/visualizations/valid-anagram';
+
+<ValidAnagramViz s="race" t="care" />
+
+## Complexity Analysis
+
+- **Time Complexity**: $O(n)$ — We iterate through both strings exactly once.
+- **Space Complexity**: $O(1)$ — While we use a hash map, it stores at most 26 characters (for lowercase English letters), which is constant space. Sorting would have been $O(n \log n)$.
+
+## Important Considerations
+
+1. **Length Check**: If lengths are different, they cannot be anagrams.
+2. **Unicode Characters**: If the input can contain Unicode (not just English), the hash map size would grow, making the space complexity $O(k)$ where $k$ is the character set size.

@@ -1,0 +1,29 @@
+# Reverse String
+
+Write a function that reverses a string. The input string is given as an array of characters `s`. You must do this by modifying the input array in-place with $O(1)$ extra memory.
+
+## Intuition
+
+The most efficient way to reverse an array in-place is to use two pointers. One pointer starts at the beginning (`left`) and the other at the end (`right`). We swap the characters at these positions and move both pointers towards the center until they meet.
+
+import { ReverseStringViz } from '../../components/visualizations/reverse-string';
+
+<ReverseStringViz s={["h", "e", "l", "l", "o"]} />
+
+## Complexity Analysis
+
+- **Time Complexity**: $O(n)$ — We visit each element once or rather $n/2$ times.
+- **Space Complexity**: $O(1)$ — We only use a constant amount of extra space for the two pointers and a temporary swap variable.
+
+## Key Technique: The Swap
+
+In many languages, you can swap elements using a temporary variable:
+```typescript
+let temp = s[left];
+s[left] = s[right];
+s[right] = temp;
+```
+In modern JavaScript/TypeScript, you can use **destructuring assignment** for a cleaner look:
+```typescript
+[s[left], s[right]] = [s[right], s[left]];
+```

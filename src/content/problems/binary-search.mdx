@@ -1,0 +1,22 @@
+# Binary Search
+
+Binary Search is an efficient interval-searching algorithm that works on sorted arrays. It repeatedly divides the search interval in half. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise, narrow it to the upper half.
+
+## Intuition
+
+Imagine you're searching for a word in a physical dictionary. You don't start from the first page and turn every single page until you find it. Instead, you open the dictionary in the middle, see if the word comes before or after the current page, and then repeat this process in the remaining half.
+
+import { BinarySearchViz } from '../../components/visualizations/binary-search';
+
+<BinarySearchViz nums={[-1, 0, 3, 5, 9, 12]} target={9} />
+
+## Complexity Analysis
+
+- **Time Complexity**: $O(\log n)$ — Each step reduces the search space by half. 
+- **Space Complexity**: $O(1)$ — Only a constant amount of extra space is used for pointers.
+
+## Key Takeaways
+
+1. The array **must be sorted**.
+2. Be careful with the loop condition: `left <= right`.
+3. Use `mid = left + Math.floor((right - left) / 2)` to avoid integer overflow in some languages.

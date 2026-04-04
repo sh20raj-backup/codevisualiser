@@ -1,0 +1,32 @@
+# Two Sum
+
+The **Two Sum** problem is a classic introduction to array manipulation and the importance of efficient data structures.
+
+## The Challenge
+
+Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.
+
+You may assume that each input would have **exactly one solution**, and you may not use the same element twice.
+
+## Approaches
+
+### 1. Brute Force
+The simplest approach is to loop through each element $x$ and find if there is another value that equals $target - x$. As we need to check every possible pair, the time complexity is $O(n^2)$.
+
+### 2. One-pass Hash Map
+We can reduce the time complexity by trading space for speed. As we iterate through the array, we store each number's value and its index in a hash map. For each current number, we check if its *complement* ($target - current$) is already in the map.
+
+---
+
+## Interactive Visualization
+
+Below, you can see how the **One-pass Hash Map** approach works step by step. Notice how the map is built as we go, allowing us to find the complement in $O(1)$ time.
+
+import { TwoSumViz } from '../../components/visualizations/two-sum';
+
+<TwoSumViz nums={[2, 7, 11, 15]} target={9} approach="One-pass Hash Map" />
+
+---
+
+## Follow-up
+Can you come up with an algorithm that is less than $O(n^2)$ time complexity? (Spoiler: we just did with the hash map!)

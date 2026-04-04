@@ -1,0 +1,27 @@
+# Valid Parentheses
+
+Given a string `s` containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid.
+
+An input string is valid if:
+1. Open brackets must be closed by the same type of brackets.
+2. Open brackets must be closed in the correct order.
+3. Every close bracket has a corresponding open bracket of the same type.
+
+## Intuition
+
+The LIFO (Last-In, First-Out) nature of a **Stack** makes it the perfect data structure for this problem. When we encounter an opening bracket, we push it onto the stack. When we encounter a closing bracket, it must match the opening bracket most recently added to the stack (the top element).
+
+import { ValidParenthesesViz } from '../../components/visualizations/valid-parentheses';
+
+<ValidParenthesesViz s="()[]{}" />
+
+## Complexity Analysis
+
+- **Time Complexity**: $O(n)$ — We traverse the string once. Each bracket is pushed and popped exactly once.
+- **Space Complexity**: $O(n)$ — In the worst case (e.g., `"((((((("`), the stack stores all characters.
+
+## Key Scenarios
+
+- **Matching Pair**: The top of the stack matches the closing bracket. (Push followed by successful Pop)
+- **Mismatched Pair**: The closing bracket doesn't match the top of the stack. (Invalid)
+- **Unbalanced Strings**: Closing bracket with an empty stack, or stack not empty after processing all characters. (Invalid)

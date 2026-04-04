@@ -1,0 +1,24 @@
+# Contains Duplicate
+
+Given an integer array `nums`, return `true` if any value appears at least twice in the array, and return `false` if every element is distinct.
+
+## Intuition
+
+The most straightforward way to detect duplicates with optimal time complexity is using a **Hash Set**. As we traverse the array, we check if the current number has been seen before. If it has, we've found a duplicate. If not, we add it to the set and continue.
+
+import { ContainsDuplicateViz } from '../../components/visualizations/contains-duplicate';
+
+<ContainsDuplicateViz nums={[1, 2, 3, 1]} />
+
+## Complexity Analysis
+
+- **Time Complexity**: $O(n)$ — We iterate through the array once. Hash set operations (`add`, `has`) are $O(1)$ on average.
+- **Space Complexity**: $O(n)$ — In the worst case (no duplicates), we store all $n$ elements in the set.
+
+## Alternative Approaches
+
+| Approach | Time Complexity | Space Complexity | Notes |
+| :--- | :--- | :--- | :--- |
+| **Brute Force** | $O(n^2)$ | $O(1)$ | Compare every possible pair. |
+| **Sorting** | $O(n \log n)$ | $O(1)$ or $O(n)$ | Sort first, then check adjacent elements. |
+| **Hash Set** | $O(n)$ | $O(n)$ | Best balance for time performance. |

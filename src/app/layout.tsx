@@ -31,8 +31,8 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body className={cn(
-        inter.variable, 
-        jetbrainsMono.variable, 
+        inter.variable,
+        jetbrainsMono.variable,
         "antialiased min-h-screen bg-black text-zinc-100 selection:bg-blue-500/30"
       )}>
         <div className="flex flex-col min-h-screen">
@@ -45,13 +45,13 @@ export default function RootLayout({
                 </div>
                 <span className="font-bold text-xl tracking-tight text-white">AlgoViz</span>
               </Link>
-              
+
               <div className="flex items-center gap-8 text-sm font-medium text-zinc-400">
                 <Link href="/" className="hover:text-white transition-colors">Problems</Link>
                 <Link href="/CONTRIBUTING" className="hover:text-white transition-colors">Contribute</Link>
-                <a 
-                  href="https://github.com/shaswatraj/algo-viz" 
-                  target="_blank" 
+                <a
+                  href="https://github.com/sh20RAJ/codevisualiser"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors flex items-center gap-1.5"
                 >

@@ -31,7 +31,7 @@ We welcome contributions of all kinds: from fixing typos in explanations to buil
 
 ### 2. Setup
 ```bash
-git clone https://github.com/shaswatraj/algo-viz.git
+git clone https://github.com/sh20RAJ/codevisualiser.git
 cd algo-viz
 npm install
 ```
